@@ -192,11 +192,11 @@ If you have any questions, feel free to open a discussion or contact us at <b>yi
 
 """
 output_model_obj = gr.Model3D(
-    label="Processed Input Mesh (OBJ Format)",
+    label="Generated Mesh (OBJ Format)",
     clear_color=[1, 1, 1, 1],
 )
 preprocess_model_obj = gr.Model3D(
-    label="Generated Mesh (OBJ Format)",
+    label="Processed Input Mesh (OBJ Format)",
     clear_color=[1, 1, 1, 1],
 )
 input_image_render = gr.Image(

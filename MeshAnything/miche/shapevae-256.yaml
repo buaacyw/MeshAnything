@@ -1,0 +1,46 @@
+model:
+  target: MeshAnything.miche.michelangelo.models.tsal.asl_pl_module.AlignedShapeAsLatentPLModule
+  params:
+    shape_module_cfg:
+      target: MeshAnything.miche.michelangelo.models.tsal.sal_perceiver.AlignedShapeLatentPerceiver
+      params:
+        num_latents: 256
+        embed_dim: 64
+        point_feats: 3   # normal
+        num_freqs: 8
+        include_pi: false
+        heads: 12
+        width: 768
+        num_encoder_layers: 8
+        num_decoder_layers: 16
+        use_ln_post: true
+        init_scale: 0.25
+        qkv_bias: false
+        use_checkpoint: true
+    aligned_module_cfg:
+      target: MeshAnything.miche.michelangelo.models.tsal.clip_asl_module.CLIPAlignedShapeAsLatentModule
+      params:
+        clip_model_version: "./checkpoints/clip/clip-vit-large-patch14"
+
+    loss_cfg:
+      target: MeshAnything.miche.michelangelo.models.tsal.loss.ContrastKLNearFar
+      params:
+        contrast_weight: 0.1
+        near_weight: 0.1
+        kl_weight: 0.001
+
+    optimizer_cfg:
+      optimizer:
+        target: torch.optim.AdamW
+        params:
+          betas: [0.9, 0.99]
+          eps: 1.e-6
+          weight_decay: 1.e-2
+
+      scheduler:
+        target: MeshAnything.miche.michelangelo.utils.trainings.lr_scheduler.LambdaWarmUpCosineFactorScheduler
+        params:
+          warm_up_steps: 5000
+          f_start: 1.e-6
+          f_min: 1.e-3
+          f_max: 1.0

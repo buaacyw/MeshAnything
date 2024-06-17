@@ -83,7 +83,7 @@ python app.py
 python main.py --input_dir examples --out_dir mesh_output --input_type mesh
 
 # inference for single file
-python main.py --input_dir examples/wand.ply --out_dir mesh_output --input_type mesh
+python main.py --input_path examples/wand.ply --out_dir mesh_output --input_type mesh
 
 # Preprocess with Marching Cubes first
 python main.py --input_dir examples --out_dir mesh_output --input_type mesh --mc

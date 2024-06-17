@@ -169,7 +169,7 @@ _HEADER_ = '''
 
 **MeshAnything** converts any 3D representation into meshes created by human artists, i.e., Artist-Created Meshes (AMs).
 
-Code: <a href='https://github.com/buaacyw/MeshAnything' target='_blank'>GitHub</a>. Arxiv Paper: <a href='https://buaacyw.github.io/mesh-anything/' target='_blank'>ArXiv</a>.
+Code: <a href='https://github.com/buaacyw/MeshAnything' target='_blank'>GitHub</a>. Arxiv Paper: <a href='https://arxiv.org/abs/2406.10163' target='_blank'>ArXiv</a>.
 
 ??????**Important Notes:**
 - Gradio doesn't support interactive wireframe rendering currently. For interactive mesh visualization, please use download the obj file and open it with MeshLab or https://3dviewer.net/.

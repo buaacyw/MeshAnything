@@ -57,6 +57,8 @@
 - [Usage](#usage)
 - [Important Notes](#important-notes)
 - [TODO](#todo)
+- [Acknowledgement](#acknowledgement)
+- [BibTeX](#bibtex)
 
 ## Installation
 Our environment has been tested on Ubuntu 22, CUDA 11.8 with A100, A800 and A6000.
@@ -121,3 +123,15 @@ Our code is based on these wonderful repos:
 * [Michelangelo](https://github.com/NeuralCarver/Michelangelo)
 * [transformers](https://github.com/huggingface/transformers)
 * [vector-quantize-pytorch](https://github.com/lucidrains/vector-quantize-pytorch)
+
+## BibTeX
+```
+@misc{chen2024meshanything,
+  title={MeshAnything: Artist-Created Mesh Generation with Autoregressive Transformers},
+  author={Yiwen Chen and Tong He and Di Huang and Weicai Ye and Sijin Chen and Jiaxiang Tang and Xin Chen and Zhongang Cai and Lei Yang and Gang Yu and Guosheng Lin and Chi Zhang},
+  year={2024},
+  eprint={2406.10163},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}
+```

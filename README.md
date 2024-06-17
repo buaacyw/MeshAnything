@@ -34,7 +34,7 @@
 
 <div align="center">
 
-<a href='https://arxiv.org/abs/2311.14521'><img src='https://img.shields.io/badge/arXiv-2311.14521-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='https://arxiv.org/abs/2406.10163'><img src='https://img.shields.io/badge/arXiv-2311.14521-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <a href='https://buaacyw.github.io/mesh-anything/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <a href='https://github.com/buaacyw/MeshAnything/blob/master/LICENSE.txt'><img src='https://img.shields.io/badge/License-SLab-blue'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <a href="https://huggingface.co/spaces/Yiwen-ntu/MeshAnything"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Gradio%20Demo-Huggingface-orange"></a>;
@@ -102,9 +102,9 @@ python main.py --input_dir pc_examples/mouse.npy --out_dir pc_output --input_typ
 ```
 
 ## Important Notes
+- It takes about 7GB and 30s to generate a mesh on an A6000 GPU.
 - The input mesh will be normalized to a unit bounding box. The up vector of the input mesh should be +Y for better results.
 - Limited by computational resources, MeshAnything is trained on meshes with fewer than 800 faces and cannot generate meshes with more than 800 faces. The shape of the input mesh should be sharp enough; otherwise, it will be challenging to represent it with only 800 faces. Thus, feed-forward image-to-3D methods may often produce bad results due to insufficient shape quality.
-- It takes about 7GB and 30s to generate a mesh on an A6000 GPU.
 - Please refer to https://huggingface.co/spaces/Yiwen-ntu/MeshAnything/tree/main/examples for more examples.
 ## TODO
 

@@ -43,7 +43,7 @@
 
 
 <p align="center">
-    <img src="demo/demo_video.gif" alt="Demo GIF" width="1000px" />
+    <img src="demo/demo_video.gif" alt="Demo GIF" width="512px" />
 </p>
 
 

@@ -37,7 +37,7 @@
 <a href='https://arxiv.org/abs/2406.10163'><img src='https://img.shields.io/badge/arXiv-2406.10163-b31b1b.svg'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <a href='https://buaacyw.github.io/mesh-anything/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  <a href='https://github.com/buaacyw/MeshAnything/blob/master/LICENSE.txt'><img src='https://img.shields.io/badge/License-SLab-blue'></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://huggingface.co/spaces/Yiwen-ntu/MeshAnything"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Gradio%20Demo-Huggingface-orange"></a>;
+<a href="https://huggingface.co/spaces/Yiwen-ntu/MeshAnything"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Gradio%20Demo-Huggingface-orange"></a>
 
 </div>
 
@@ -73,25 +73,24 @@ pip install flash-attn --no-build-isolation
 ```
 
 ## Usage
+### Local Gradio Demo <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>
 ```
-# Gradio Demo
 python app.py
+```
 
-# Command line inference
-
-# For mesh
-
-# inference for folder
+### Mesh Command line inference
+```
+# folder input
 python main.py --input_dir examples --out_dir mesh_output --input_type mesh
 
-# inference for single file
+# single file input
 python main.py --input_path examples/wand.ply --out_dir mesh_output --input_type mesh
 
 # Preprocess with Marching Cubes first
 python main.py --input_dir examples --out_dir mesh_output --input_type mesh --mc
-
-# For point cloud
-
+```
+### Point Cloud Command line inference
+```
 # Note: if you want to use your own point cloud, please make sure the normal is included.
 # The file format should be a .npy file with shape (N, 6), where N is the number of points. The first 3 columns are the coordinates, and the last 3 columns are the normal.
 
@@ -100,7 +99,6 @@ python main.py --input_dir pc_examples --out_dir pc_output --input_type pc_norma
 
 # inference for single file
 python main.py --input_dir pc_examples/mouse.npy --out_dir pc_output --input_type pc_normal
-
 ```
 
 ## Important Notes

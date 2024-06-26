@@ -105,7 +105,7 @@ python main.py --input_dir pc_examples/mouse.npy --out_dir pc_output --input_typ
 ## Important Notes
 - It takes about 7GB and 30s to generate a mesh on an A6000 GPU.
 - The input mesh will be normalized to a unit bounding box. The up vector of the input mesh should be +Y for better results.
-- Limited by computational resources, MeshAnything is trained on meshes with fewer than 800 faces and cannot generate meshes with more than 800 faces. The shape of the input mesh should be sharp enough; otherwise, it will be challenging to represent it with only 800 faces. Thus, feed-forward image-to-3D methods may often produce bad results due to insufficient shape quality. We suggest using results from 3D reconstruction, scanning and sds-based method (like DreamCraft3D) as the input of MeshAnything.
+- Limited by computational resources, MeshAnything is trained on meshes with fewer than 800 faces and cannot generate meshes with more than 800 faces. The shape of the input mesh should be sharp enough; otherwise, it will be challenging to represent it with only 800 faces. Thus, feed-forward 3D generation methods may often produce bad results due to insufficient shape quality. We suggest using results from 3D reconstruction, scanning and SDS-based method (like [DreamCraft3D](https://github.com/deepseek-ai/DreamCraft3D)) as the input of MeshAnything.
 - Please refer to https://huggingface.co/spaces/Yiwen-ntu/MeshAnything/tree/main/examples for more examples.
 ## TODO
 

@@ -123,6 +123,10 @@ Our code is based on these wonderful repos:
 * [transformers](https://github.com/huggingface/transformers)
 * [vector-quantize-pytorch](https://github.com/lucidrains/vector-quantize-pytorch)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=buaacyw/MeshAnything&type=Date)](https://star-history.com/#buaacyw/MeshAnything&Date)
+
 ## BibTeX
 ```
 @misc{chen2024meshanything,

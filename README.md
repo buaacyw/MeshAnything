@@ -59,6 +59,7 @@
 - [Important Notes](#important-notes)
 - [TODO](#todo)
 - [Acknowledgement](#acknowledgement)
+- [Star History](#star-history)
 - [BibTeX](#bibtex)
 
 ## Installation

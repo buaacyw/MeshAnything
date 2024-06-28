@@ -98,7 +98,21 @@ def do_inference(input_3d, sample_seed=0, do_sampling=False, do_marching_cubes=F
 
     input_mesh = trimesh.load(input_3d)
     pc_list, mesh_list = process_mesh_to_pc([input_mesh], marching_cubes = do_marching_cubes)
+    pc_normal = pc_list[0] # 4096, 6
     mesh = mesh_list[0]
+    vertices = mesh.vertices
+
+    pc_coor = pc_normal[:, :3]
+    normals = pc_normal[:, 3:]
+
+    bounds = np.array([vertices.min(axis=0), vertices.max(axis=0)])
+    # scale mesh and pc
+    vertices = vertices - (bounds[0] + bounds[1])[None, :] / 2
+    vertices = vertices / (bounds[1] - bounds[0]).max()
+    mesh.vertices = vertices
+    pc_coor = pc_coor - (bounds[0] + bounds[1])[None, :] / 2
+    pc_coor = pc_coor / (bounds[1] - bounds[0]).max()
+
     mesh.merge_vertices()
     mesh.update_faces(mesh.unique_faces())
     mesh.fix_normals()
@@ -113,13 +127,8 @@ def do_inference(input_3d, sample_seed=0, do_sampling=False, do_marching_cubes=F
     mesh.export(input_save_name)
     input_render_res = wireframe_render(mesh)
 
-    pc_normal = pc_list[0] # 4096, 6
-    pc_coor = pc_normal[:, :3]
-    normals = pc_normal[:, 3:]
+    pc_coor = pc_coor / np.abs(pc_coor).max() * 0.9995 # input should be from -1 to 1
 
-    bounds = np.array([pc_coor.min(axis=0), pc_coor.max(axis=0)])
-    pc_coor = pc_coor - (bounds[0] + bounds[1])[None, :] / 2
-    pc_coor = pc_coor / np.abs(pc_coor).max() * 0.9995
     assert (np.linalg.norm(normals, axis=-1) > 0.99).all(), "normals should be unit vectors, something wrong"
     normalized_pc_normal = np.concatenate([pc_coor, normals], axis=-1, dtype=np.float16)
 

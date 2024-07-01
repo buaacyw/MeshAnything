@@ -73,6 +73,14 @@ pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https
 pip install -r requirements.txt
 pip install flash-attn --no-build-isolation
 ```
+or
+```shell
+pip install git+https://github.com/buaacyw/MeshAnything.git
+```
+And directly use in your code as
+```
+import MeshAnything
+```
 
 ## Usage
 ### Local Gradio Demo <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>
@@ -100,7 +108,7 @@ python main.py --input_dir examples --out_dir mesh_output --input_type mesh --mc
 python main.py --input_dir pc_examples --out_dir pc_output --input_type pc_normal
 
 # inference for single file
-python main.py --input_dir pc_examples/mouse.npy --out_dir pc_output --input_type pc_normal
+python main.py --input_path pc_examples/mouse.npy --out_dir pc_output --input_type pc_normal
 ```
 
 ## Important Notes

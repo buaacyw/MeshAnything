@@ -49,7 +49,8 @@
 
 
 ## Release
-- [6/17] 🔥🔥 We released the 350m version of **MeshAnything**.
+- [6/17] 🔥🔥 Try our newly released **[MeshAnything V2](https://github.com/buaacyw/MeshAnythingV2)**. Maximum face number is increased to **1600** in V2 with better performance.
+- [6/17] We released the 350m version of **MeshAnything**.
 
 ## Contents
 - [Release](#release)

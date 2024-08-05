@@ -67,11 +67,19 @@ Our environment has been tested on Ubuntu 22, CUDA 11.8 with A100, A800 and A600
 1. Clone our repo and create conda environment
 ```
 git clone https://github.com/buaacyw/MeshAnything.git && cd MeshAnything
-conda create -n MeshAnything python==3.10.13
+conda create -n MeshAnything python==3.10.13 -y
 conda activate MeshAnything
 pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 pip install flash-attn --no-build-isolation
+```
+or
+```shell
+pip install git+https://github.com/buaacyw/MeshAnything.git
+```
+And directly use in your code as
+```
+import MeshAnything
 ```
 
 ## Usage
@@ -86,7 +94,7 @@ python app.py
 python main.py --input_dir examples --out_dir mesh_output --input_type mesh
 
 # single file input
-python main.py --input_path examples/wand.ply --out_dir mesh_output --input_type mesh
+python main.py --input_path examples/wand.obj --out_dir mesh_output --input_type mesh
 
 # Preprocess with Marching Cubes first
 python main.py --input_dir examples --out_dir mesh_output --input_type mesh --mc
@@ -100,7 +108,7 @@ python main.py --input_dir examples --out_dir mesh_output --input_type mesh --mc
 python main.py --input_dir pc_examples --out_dir pc_output --input_type pc_normal
 
 # inference for single file
-python main.py --input_dir pc_examples/mouse.npy --out_dir pc_output --input_type pc_normal
+python main.py --input_path pc_examples/mouse.npy --out_dir pc_output --input_type pc_normal
 ```
 
 ## Important Notes

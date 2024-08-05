@@ -327,6 +327,7 @@ class ShapeOPTDecoder(OPTDecoder):
                                             dtype=inputs_embeds.dtype).long()
             inputs_embeds = inputs_embeds + self.cond_embed(cond_embed_query)
 
+
         elif inputs_embeds is not None:
             # assert self.cond and not self.training
 
